@@ -20,15 +20,17 @@ public class ButtonSounds : MonoBehaviour
 
     public void OffAllSound()
     {
-        _audioMixer.GetFloat(SoundsData.Params.MasterVolume, out float value);
+        string typeSound = SoundsData.TypeVolume[TypeSound.MasterVolume];
+
+        _audioMixer.GetFloat(typeSound, out float value);
 
         if (value == VolumeOff)
         {
-            _audioMixer.SetFloat(SoundsData.Params.MasterVolume, _lastMasterVolume);
+            _audioMixer.SetFloat(typeSound, _lastMasterVolume);
         }
         else
         {
-            _audioMixer.SetFloat(SoundsData.Params.MasterVolume, VolumeOff);
+            _audioMixer.SetFloat(typeSound, VolumeOff);
             _lastMasterVolume = value;
         }
     }

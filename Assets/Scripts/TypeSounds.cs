@@ -1,4 +1,4 @@
-enum TypeSound
+public enum TypeSound
 {
     MasterVolume,
     MusicVolume,
